@@ -2,10 +2,11 @@ import streamlit as st
 import pickle
 import string
 from heapq import nlargest
+import time
 import nltk
 from nltk.corpus import stopwords
 
-stop_words=stopwords.words("english")
+stop_words = stopwords.words("english")
 
 normalized_frequencies = pickle.load(open("normalized_frequencies.pkl", "rb"))
 
@@ -38,5 +39,17 @@ def summary_generator(text):
     res = nlargest(l, d, key=d.get)
     return ". ".join(res)
 
+
 # --------------------------- UI --------------------------------
 st.title("SUMMARY GENERATOR")
+
+texted = st.text_area("Enter the para")
+
+button = st.button("Summarize")
+
+if button:
+    summary = summary_generator(texted)
+    with st.spinner('Wait for it...'):
+        time.sleep(2)
+    st.success('Done!')
+    st.write(summary)
