@@ -3,7 +3,7 @@ import pickle
 import string
 from heapq import nlargest
 import time
-
+import nltk
 from nltk.corpus import stopwords
 
 stop_words = stopwords.words("english")
