@@ -4,9 +4,12 @@ import string
 from heapq import nlargest
 import time
 import nltk
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 
-stop_words = stopwords.words("english")
+# words=nltk.download('stopwords')
+#
+# stop_words = words.words("english")
+stop_words = nltk.corpus.stopwords.words('english')
 
 normalized_frequencies = pickle.load(open("normalized_frequencies.pkl", "rb"))
 
