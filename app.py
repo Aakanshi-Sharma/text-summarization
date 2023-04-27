@@ -41,7 +41,7 @@ def summary_generator(text):
 # --------------------------- UI --------------------------------
 st.title("SUMMARY GENERATOR")
 
-texted = st.text_area("Enter the para")
+texted = st.text_area("Enter your text")
 
 button = st.button("Summarize")
 
