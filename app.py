@@ -4,12 +4,9 @@ import string
 from heapq import nlargest
 import time
 import nltk
-# from nltk.corpus import stopwords
 
-# words=nltk.download('stopwords')
-#
-# stop_words = words.words("english")
-stop_words = nltk.corpus.stopwords.words('english')
+
+
 
 normalized_frequencies = pickle.load(open("normalized_frequencies.pkl", "rb"))
 
@@ -23,7 +20,7 @@ def score_calculation(arr):
         text = i.lower()
         text = text.strip().split(" ")
         for b in text:
-            if b not in stop_words and b not in string.punctuation:
+            if b not in stopwords and b not in string.punctuation:
                 a = "".join([j for j in b if j not in string.punctuation])
                 holder.append(a)
 
