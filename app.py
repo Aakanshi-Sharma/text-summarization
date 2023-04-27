@@ -48,6 +48,6 @@ button = st.button("Summarize")
 if button:
     summary = summary_generator(texted)
     with st.spinner('Wait for it...'):
-        time.sleep(2)
+        time.sleep(1)
     st.success('Done!')
     st.write(summary)
