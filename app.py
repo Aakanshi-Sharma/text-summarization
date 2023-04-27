@@ -5,10 +5,8 @@ from heapq import nlargest
 import time
 import nltk
 
-
-
-
 normalized_frequencies = pickle.load(open("normalized_frequencies.pkl", "rb"))
+stopwords = pickle.load(open("stopwords.pkl", "rb"))
 
 
 # --------------------------- Functions -----------------------
